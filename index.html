@@ -1,137 +1,180 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Arthur Markus Klein">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Mercado</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Bem vindo ao Mini Mercado</h1>
-        <p><em>produtos frescos e de qualidade</em></p>
 
-        <nav>
-            <ul>
-                <li><a href="#catalogo">Catálogo</a></li>
-                <li><a href="servicos.html">Serviços e Horário de Atendimento</a></li>
-                <li><a href="servicos.html#contato">Contato</a></li>
-            </ul>
-        </nav>
-        <hr>
-    </header>
+<header class="header-container text-center">
+    <h1 class="page-title">Bem vindo ao Mini Mercado</h1>
+    <p class="subtitle">produtos frescos e de qualidade</p>
 
-    <main>
+
+    <p id="dataHora" aria-live="polite"></p>
+    
+    <nav class="nav-container">
+        <ul class="custom-nav">
+            <li class="nav-item"><a class="nav-link active" href="#catalogo">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços e Horário</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="catalog-section mb-5">
         <h2>Sobre o Mini Mercado</h2>
-        <p>
-            O Mini Mercado tem <strong>atendimento personalizado e preços justos</strong>, somos sua melhor opção para compras práticas e confiáveis. <br>Além da retirada no local, disponibilizamos tele-entrega para sua comodidade. 
+        <p class="lead">
+            O Mini Mercado tem <strong>atendimento personalizado e preços justos</strong>. Além da retirada no local, disponibilizamos tele-entrega para sua comodidade. 
         </p>
+    </section>
 
-        <hr>
-        <section id="catalogo">
-            <h2>Catálogo</h2>
-            <p>Veja nossos produtos disponíveis:</p>
+    <section id="catalogo" class="catalog-section mb-5">
+        <h2>Catálogo</h2>
+        <p>Veja nossos produtos disponíveis:</p>
 
+        <!-- Carrossel Bootstrap -->
+        <div class="carousel-container mb-4">
+            <div id="carouselCatalogo" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselCatalogo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselCatalogo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselCatalogo" data-bs-slide-to="2"></button>
+                </div>
+                
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagens/legumes-verduras.png" class="d-block w-100" alt="Cesta de verduras e legumes frescos, incluindo alface, cenoura e rúcula">
+                        <div class="carousel-caption">
+                            <h5>Verduras e Legumes</h5>
+                            <p>Frescos e sem agrotóxicos</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagens/alimentos-nao-pereciveis.png" class="d-block w-100" alt="Pacotes de arroz, feijão e outros alimentos não perecíveis">
+                        <div class="carousel-caption">
+                            <h5>Alimentos Não Perecíveis</h5>
+                            <p>Produtos de extrema qualidade</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagens/produtos-limpeza.png" class="d-block w-100" alt="Produtos de limpeza: detergente, esponja e limpador multiuso">
+                        <div class="carousel-caption">
+                            <h5>Produtos de Limpeza</h5>
+                            <p>Marcas confiáveis e de qualidade</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCatalogo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCatalogo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabelas de produtos -->
+        <div class="catalog-section">
             <h3>Frutas e Verduras</h3>
-            <figure>
-                <img src="imagens/legumes-verduras.png" alt="Verduras e Legumas" width="300" height="200" loading="lazy">
-                <figcaption><em>Verduras e Legumes sem agrotóxicos</em></figcaption>
-            </figure>
-            <table>
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Produtos</th>
-                        <th>Descrição</th>
-                        <th>Valor</th>
+                        <th scope="col">Produtos</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Valor</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th>Rúcula</th>
-                        <td>Folha rica em nutrientes e <br>sabor levemente amargo</td>
+                        <td>Rúcula</td>
+                        <td>Folha rica em nutrientes e sabor levemente amargo</td>
                         <td>R$10,00/kg</td>
                     </tr>
                     <tr>
-                        <th>Cenoura</th>
+                        <td>Cenoura</td>
                         <td>Rica em betacaroteno</td>
                         <td>R$7,50/kg</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
+        <div class="catalog-section">
             <h3>Alimentos não perecíveis</h3>
-            <figure>
-                <img src="imagens/alimentos-nao-pereciveis.png" alt="Alimentos Não Perecíveis" width="300" height="250" loading="lazy">
-                <figcaption><em>Produtos de extrema qualidade</em></figcaption>
-            </figure>
-            <table>
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Produtos</th>
-                        <th>Descrição</th>
-                        <th>Valor</th>
+                        <th scope="col">Produtos</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Valor</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th>Arroz</th>
+                        <td>Arroz</td>
                         <td>Arroz branco pacote 1kg</td>
                         <td>R$15,00</td>
                     </tr>
                     <tr>
-                        <th>Feijão</th>
+                        <td>Feijão</td>
                         <td>Feijão Carioca pacote 1kg</td>
                         <td>R$10,00</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
+        <div class="catalog-section">
             <h3>Produtos de Limpeza</h3>
-            <figure>
-                <img src="imagens/produtos-limpeza.png" alt="Produtos de Limpeza" width="350" height="250" loading="lazy">
-                <figcaption><em>Produtos de marcas confiáveis e de qualidade</em></figcaption>
-            </figure>
-            <table>
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Produto</th>
-                        <th>Descrição</th>
-                        <th>Valor</th>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Valor</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th>Detergente</th>
+                        <td>Detergente</td>
                         <td>Detergente Ypê 500ml</td>
                         <td>R$3,49</td>
                     </tr>
                     <tr>
-                        <th>Esponja</th>
+                        <td>Esponja</td>
                         <td>Esponja dupla face multiuso</td>
                         <td>R$4,50</td>
                     </tr>
                 </tbody>
             </table>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
-    <footer id="contato">
-        <hr>
-        <p><strong>Mini Mercado</strong></p>
-        <address>
-            Rua dos Mercados, 111<br>
-            Bairro dos Mercados - Mercadolândia/RS
-        </address>
-        <p>Telefone:<a href="tel:5551999998888"> (51) 99999-8888</a></p>
-        <p>Email: <a href="mailto:contato_minimercado@gmail.com">contato_minimercado@gmail.com</a></p>
-        <p>Copyright &copy; Mini Mercado   </p>
-        <p>Autor do projeto: Arthur Markus Klein </p>
-        <nav>
-            <p><a href="#">Início</a> | <a href="servicos.html">Serviços</a></p>
-        </nav>
-    </footer>
+<footer id="contato" class="container text-center">
+    <p><strong>Mini Mercado</strong></p>
+    <address>
+        Rua dos Mercados, 111<br>
+        Bairro dos Mercados - Mercadolândia/RS
+    </address>
+    <p>Telefone: <a href="tel:5551999998888">(51) 99999-8888</a></p>
+    <p>Email: <a href="mailto:contato_minimercado@gmail.com">contato_minimercado@gmail.com</a></p>
+    <p>Copyright &copy; Mini Mercado</p>
+    <p>Autor do projeto: Arthur Markus Klein</p>
+    <nav>
+        <p><a href="#">Início</a> | <a href="servicos.html">Serviços</a></p>
+    </nav>
+</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

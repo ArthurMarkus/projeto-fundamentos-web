@@ -1,141 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Arthur Markus Klein">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços - Mini Mercado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Mini Mercado</h1>
-        <p><em>produtos frescos e de qualidade</em></p>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#horario">Horário</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="header-container text-center">
+    <h1 class="page-title">Mini Mercado</h1>
+    <p class="subtitle">produtos frescos e de qualidade</p>
 
-    <main>
+    <nav class="nav-container">
+        <ul class="custom-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#horario">Horário</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="catalog-section">
         <h2>Nossos Serviços</h2>
 
         <section>
             <h3>Retirada no Local</h3>
-            <figure>
-                <img src="imagens/minimercado.png" alt="Mini Mercado" width="400" height="250" loading="lazy">
-                <figcaption><em>Nossa loja está sempre pronta para recebê-lo</em></figcaption>
-            </figure>
-
-            <h4>Descrição do Serviço</h4>
-             <p>Retire seus produtos diretamente em nossa loja com <strong>atendimento personalizado</strong>. 
-            Nossos funcionários separam seu pedido com cuidado, garantindo a qualidade e frescor dos produtos.</p>
-            
-            <ul>
-                <li>Separação do pedido em <strong>até 20 minutos</strong></li>
-                <li>Produtos frescos selecionados na hora</li>
-                <li>Atendimento personalizado e familiar</li>
-                <li>Você pode conferir os produtos antes de levar</li>
-            </ul>
-
-            <h4>Valor</h4>
-            <p>Sem taxa adicional <strong>- Você paga apenas pelo produto</strong></p>
+            <p>Retire seus produtos diretamente em nossa loja com <strong>atendimento personalizado</strong>.</p>
         </section>
 
         <section>
             <h3>Tele-entrega</h3>
-
-            <h4>Descrição do Serviço:</h4>
-            <p>Entregamos seus produtos diretamente em sua casa com <strong>segurança e rapidez</strong>. 
-            Nossa equipe de entrega conhece bem a região e garante que seus produtos cheguem frescos.</p>
-
-            <ul>
-                <li>Entrega em <strong>até 60 minutos</strong></li>
-                <li>Cobertura em todo o bairro e adjacências</li>
-                <li>Produtos acondicionados adequadamente</li>
-                <li>Entregadores uniformizados e identificados</li>
-            </ul>
-
-            <h4>Valor</h4>
-            <p>Valor do Pedido + Taxa de entrega baseado na distância do estabelecimento.</p>
+            <p>Entregamos seus produtos diretamente em sua casa com <strong>segurança e rapidez</strong>.</p>
         </section>
 
-         <section id="horario">
+        <section id="horario" class="my-4">
             <h3>Horário de Atendimento</h3>
-            <p>Funcionamos todos os dias da semana para sua comodidade:</p>
-
-            <table>
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Dia da Semana</th>
-                        <th>Loja</th>
-                        <th>Tele-entrega</th>
+                        <th scope="col">Dia da Semana</th>
+                        <th scope="col">Loja</th>
+                        <th scope="col">Tele-entrega</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>Segunda a Sexta</strong></td>
-                        <td>7h às 19h</td>
-                        <td>8h às 18h</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sábados</strong></td>
-                        <td>7h às 20h</td>
-                        <td>8h às 20h</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Domingos</strong></td>
-                        <td>8h às 20h</td>
-                        <td>8h às 20h</td>
-                    </tr>
-
+                    <tr><td>Segunda a Sexta</td><td>7h às 19h</td><td>8h às 18h</td></tr>
+                    <tr><td>Sábados</td><td>7h às 20h</td><td>8h às 20h</td></tr>
+                    <tr><td>Domingos</td><td>8h às 20h</td><td>8h às 20h</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section>
-            <h3>Formas de Pagamento</h3>
-            <p>Aceitamos diversas formas de pagamento para sua comodidade:</p>
-            <ul>
-                <li><strong>Dinheiro</strong> - à vista com desconto especial</li>
-                <li><strong>PIX</strong> - transferência instantânea</li>
-                <li><strong>Cartão de Débito</strong> - todas as bandeiras</li>
-                <li><strong>Cartão de Crédito</strong> - parcelamos em até 3x (pedidos acima de R$ 30,00)</li>
-            </ul>
+        <section id="cadastro-cliente" class="my-5">
+            <h3>Cadastro de Cliente</h3>
+            <form id="formCliente">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome Completo *</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF *</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+                </div>
+
+                <fieldset class="mb-3">
+                    <legend>Sexo *</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sexo" id="masculino" value="Masculino" required>
+                        <label class="form-check-label" for="masculino">Masculino</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sexo" id="feminino" value="Feminino" required>
+                        <label class="form-check-label" for="feminino">Feminino</label>
+                    </div>
+                </fieldset>
+
+                <div class="mb-3">
+                    <label for="endereco" class="form-label">Endereço *</label>
+                    <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua, número, bairro" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone *</label>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail *</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <fieldset class="mb-3">
+                    <legend>Preferência de Contato:</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="contatoWhatsapp" name="contato" value="WhatsApp">
+                        <label class="form-check-label" for="contatoWhatsapp">WhatsApp</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="contatoEmail" name="contato" value="E-mail">
+                        <label class="form-check-label" for="contatoEmail">E-mail</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="contatoTelefone" name="contato" value="Telefone">
+                        <label class="form-check-label" for="contatoTelefone">Telefone</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
         </section>
 
-        <section id="contato">
-            <h3>Como Fazer Seu Pedido</h3>
-            <p>É muito fácil fazer seu pedido conosco:</p>
+        <section id="agendamento-servico" class="my-5">
+            <h3>Agendamento de Serviço</h3>
+            <form id="formAgendamento">
+                <fieldset class="mb-3">
+                    <legend>Selecione o tipo de serviço *</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tipoServico" id="retirada" value="Retirada no Local" required>
+                        <label class="form-check-label" for="retirada">Retirada no Local</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tipoServico" id="teleEntrega" value="Tele-entrega" required>
+                        <label class="form-check-label" for="teleEntrega">Tele-entrega</label>
+                    </div>
+                </fieldset>
 
-            <h4>WhatsApp (Recomendado):</h4>
-            <p><a href="https://wa.me/5551999998888">(51) 99999-8888</a></p>
-            <p>Envie sua lista de produtos e receba confirmação rápida!</p>
+                <div class="mb-3">
+                    <label for="dataAgendamento" class="form-label">Escolha a Data *</label>
+                    <input type="date" class="form-control" id="dataAgendamento" name="dataAgendamento" required>
+                </div>
 
-            <h4>Telefone:</h4>
-            <p><a href="tel:5551999998888">(51) 99999-8888</a></p>
-            <p>Atendimento direto com nossos funcionários.</p>
+                <div class="mb-3">
+                    <label for="horaAgendamento" class="form-label">Escolha o Horário *</label>
+                    <input type="time" class="form-control" id="horaAgendamento" name="horaAgendamento" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="observacoes" class="form-label">Observações (opcional)</label>
+                    <textarea class="form-control" id="observacoes" name="observacoes" rows="3" placeholder="Ex.: Preferência de entrega"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success">Agendar Serviço</button>
+            </form>
         </section>
-    </main>
+    </section>
+</main>
 
-    <footer>
-        <hr>
-        <p><strong>Mini Mercado</strong></p>
-        <address>
-            Rua dos Mercados, 111<br>
-            Bairro dos Mercados - Mercadolândia/RS
-        </address>
-        <p>Telefone:<a href="tel:5551999998888"> (51) 99999-8888</a></p>
-        <p>Email: <a href="mailto:contato_minimercado@gmail.com">contato_minimercado@gmail.com</a></p>
-        <p>Copyright &copy; Mini Mercado   </p>
-        <p>Autor do projeto: Arthur Markus Klein </p>
-        <nav>
-            <p><a href="#">Início</a> | <a href="index.html">Home</a></p>
-        </nav>
-    </footer>
+<footer class="container text-center">
+    <hr>
+    <p><strong>Mini Mercado</strong></p>
+    <address>
+        Rua dos Mercados, 111<br>
+        Bairro dos Mercados - Mercadolândia/RS
+    </address>
+    <p>Telefone:<a href="tel:5551999998888"> (51) 99999-8888</a></p>
+    <p>Email: <a href="mailto:contato_minimercado@gmail.com">contato_minimercado@gmail.com</a></p>
+    <p>Copyright &copy; Mini Mercado</p>
+    <p>Autor do projeto: Arthur Markus Klein</p>
+    <nav>
+        <p><a href="#">Início</a> | <a href="index.html">Home</a></p>
+    </nav>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
